@@ -1,0 +1,59 @@
+public class Person {
+    private String name;
+    private int age;
+    private int size;
+
+    public Person (String name, int age, int size) {
+        this.name = name;
+        this.age = age;
+        this.size = size;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName (String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge (int age) {
+        this.age = age;
+    }
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize (int size) {
+        this.size = size;
+    }
+
+    public boolean equals(Object person2){
+        if(this == person2) {
+            return true;
+        }
+        if(person2 == null || getClass() != person2.getClass()){
+            return false;
+        }
+
+
+        Person refperweason2 = (Person) person2;
+        return age == refPerson2.age &&
+                size == refPerson2.size &&
+                Objects.equals(name, refPerson2.name);
+    }
+
+    public static void main(String[] args) {
+        Person person1 = new Person("Anna", 14, 160);
+        Person person2 = new Person("Anna", 14, 160);
+
+        if (person1.equals(person2)) {
+            System.out.println("Es gibt in der Gruppe 2 Personen, die Anna heißen, 160cm groß sind und 14 Jahre alt sind.");
+        } else {
+            System.out.println("Alle Personen unterscheiden sich in mindestens einem Merkmal (Name, Alter, Größe).");
+        }
+    }}
